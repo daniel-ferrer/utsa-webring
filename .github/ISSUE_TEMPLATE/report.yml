@@ -1,0 +1,33 @@
+name: Report a site
+description: A member site is broken, has changed hands, or breaks the content policy.
+title: "Report: "
+labels: ["report"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This report is public. For anything sensitive, email **report@utsa-webring.com** instead.
+  - type: input
+    id: website
+    attributes:
+      label: Which site?
+      placeholder: https://example.dev/
+    validations:
+      required: true
+  - type: dropdown
+    id: reason
+    attributes:
+      label: What's wrong?
+      options:
+        - The site is down or the link is broken
+        - The domain now belongs to someone else (parked, spam, for sale)
+        - The content breaks the content policy
+        - The member isn't eligible
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What did you see? Please don't paste offensive content; describe it instead.

@@ -1,0 +1,16 @@
+name: Remove my site
+description: Leave the ring. No questions asked.
+title: "Remove: "
+labels: ["remove"]
+body:
+  - type: input
+    id: website
+    attributes:
+      label: Website to remove
+      placeholder: https://your-site.dev/
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else? (optional)

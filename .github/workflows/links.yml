@@ -1,0 +1,65 @@
+name: Link check
+
+on:
+  schedule:
+    # Mondays and Thursdays, 14:17 UTC. Twice a week keeps the saved results
+    # inside the Actions cache's 7-day eviction window.
+    - cron: "17 14 * * 1,4"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: link-check
+  cancel-in-progress: false
+
+jobs:
+  links:
+    name: Check member sites
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+
+      - name: Restore results from the previous run
+        uses: actions/cache/restore@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .link-check-state.json
+          key: link-check-${{ github.run_id }}
+          restore-keys: link-check-
+
+      - name: Check links
+        run: node scripts/check-links.mjs --state .link-check-state.json --report link-report.md
+
+      - name: Save results for the next run
+        uses: actions/cache/save@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: .link-check-state.json
+          key: link-check-${{ github.run_id }}
+
+      - name: Open, update or close the dead links issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh label create dead-links --color B60205 --description "Member sites failing the link check" 2>/dev/null || true
+          issue=$(gh issue list --label dead-links --state open --limit 1 --json number --jq '.[0].number // empty')
+          if [ -f link-report.md ]; then
+            if [ -n "$issue" ]; then
+              gh issue edit "$issue" --body-file link-report.md
+            else
+              gh issue create --title "Dead links report" --label dead-links --body-file link-report.md
+            fi
+          elif [ -n "$issue" ]; then
+            gh issue close "$issue" --comment "Every member site responded in the latest check."
+          fi

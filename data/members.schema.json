@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "utsa-webring members",
+  "description": "Members of the ring, in ring order. New members are appended to the end.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["members"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "gradYear", "major", "website", "joined"],
+        "properties": {
+          "id": {
+            "description": "Permanent identifier used in your prev/next links. Lowercase letters, numbers and single hyphens.",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 40,
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "name": {
+            "description": "Your name as you want it shown.",
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 60
+          },
+          "gradYear": {
+            "description": "Expected or actual graduation year.",
+            "type": "integer",
+            "minimum": 1969,
+            "maximum": 2100
+          },
+          "major": {
+            "description": "Your major or field, e.g. \"Computer Science\".",
+            "type": "string",
+            "minLength": 2,
+            "maxLength": 60
+          },
+          "degree": {
+            "description": "Optional degree level.",
+            "enum": ["BS", "BA", "BBA", "MS", "MA", "MBA", "PhD", "Other"]
+          },
+          "website": {
+            "description": "Your personal site, starting with https:// and ending in / for a bare domain.",
+            "type": "string",
+            "maxLength": 200,
+            "pattern": "^https://"
+          },
+          "joined": {
+            "description": "The date you joined, YYYY-MM-DD.",
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+          }
+        }
+      }
+    }
+  }
+}

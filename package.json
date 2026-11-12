@@ -1,0 +1,23 @@
+{
+  "name": "utsa-webring",
+  "private": true,
+  "description": "A student-run webring for UTSA students and alumni in tech.",
+  "license": "MIT",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "build:sample": "node scripts/build.mjs --data test/fixtures/members.sample.json",
+    "serve": "node scripts/serve.mjs",
+    "dev": "npm run build:sample && npm run serve",
+    "validate": "node scripts/validate.mjs",
+    "lint:html": "html-validate \"dist/**/*.html\"",
+    "test": "node --test \"test/**/*.test.mjs\"",
+    "check": "npm test && npm run validate && npm run build && npm run lint:html"
+  },
+  "devDependencies": {
+    "html-validate": "11.21.0"
+  }
+}

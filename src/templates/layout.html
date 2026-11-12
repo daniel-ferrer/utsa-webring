@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  {{indexing}}
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="utsa-webring">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f5ede0" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#1f1713" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="{{favicon}}" type="image/svg+xml">
+  <link rel="preload" href="/assets/fonts/work-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{stylesheet}}">
+  {{scripts}}
+</head>
+<body class="{{bodyClass}}">
+  <a class="skip-link" href="#main">Skip to content</a>
+  {{banner}}
+  <header class="site-header container">
+    <a class="wordmark" href="/">utsa-webring</a>
+    <nav aria-label="Site">
+      <ul class="nav-list">
+        <li><a href="/#members">Members</a></li>
+        <li><a href="/join/">Join</a></li>
+        <li><a href="{{repoUrl}}">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+{{content}}
+  </main>
+  <footer class="site-footer container">
+    <p>{{disclaimer}}</p>
+    <p>
+      Inspired by the <a href="https://github.com/simcard0000/se-webring">SE Webring</a>
+      by Simran Thind and Janakitti Ratana-Rueangsri.
+      <a href="{{repoUrl}}">Source code</a> ·
+      <a href="{{repoUrl}}/issues/new?template=report.yml">Report a site</a>
+    </p>
+  </footer>
+</body>
+</html>

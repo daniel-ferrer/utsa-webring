@@ -1,0 +1,20 @@
+members:
+  - changed-files:
+      - any-glob-to-any-file: data/members.json
+
+site:
+  - changed-files:
+      - any-glob-to-any-file:
+          - src/**
+          - scripts/**
+          - data/members.schema.json
+
+ci:
+  - changed-files:
+      - any-glob-to-any-file: .github/**
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "*.md"
+          - LICENSE

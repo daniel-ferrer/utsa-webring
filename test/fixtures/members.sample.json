@@ -1,0 +1,14 @@
+{
+  "$schema": "../../data/members.schema.json",
+  "members": [
+    { "id": "ana-ramirez", "name": "Ana Ramírez", "gradYear": 2026, "major": "Computer Science", "website": "https://ana-ramirez.example/", "joined": "2026-11-01" },
+    { "id": "marcus-lee", "name": "Marcus Lee", "gradYear": 2027, "major": "Cybersecurity", "website": "https://marcus-lee.example/", "joined": "2026-11-01" },
+    { "id": "priya-natarajan", "name": "Priya Natarajan", "gradYear": 2025, "major": "Data Science", "website": "https://priya-natarajan.example/", "joined": "2026-11-02" },
+    { "id": "diego-herrera", "name": "Diego Herrera", "gradYear": 2028, "major": "Computer Engineering", "website": "https://diego-herrera.example/", "joined": "2026-11-02" },
+    { "id": "sam-okafor", "name": "Sam Okafor", "gradYear": 2024, "major": "Information Systems", "website": "https://sam-okafor.example/", "joined": "2026-11-03" },
+    { "id": "lily-tran", "name": "Lily Tran", "gradYear": 2026, "major": "Computer Science", "degree": "MS", "website": "https://lily-tran.example/", "joined": "2026-11-04" },
+    { "id": "jordan-castillo", "name": "Jordan Castillo", "gradYear": 2023, "major": "Cybersecurity", "website": "https://jordan-castillo.example/", "joined": "2026-11-05" },
+    { "id": "noor-haddad", "name": "Noor Haddad", "gradYear": 2029, "major": "Artificial Intelligence", "website": "https://noor-haddad.example/", "joined": "2026-11-06" },
+    { "id": "bea-wong", "name": "Bea Wong", "gradYear": 2027, "major": "Digital Design", "website": "https://bea-wong.example/portfolio/", "joined": "2026-11-07" }
+  ]
+}

@@ -1,0 +1,72 @@
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span lang="es">Hecho en San Antonio</span> · student-run</p>
+        <h1 id="hero-title" class="display">Every site,<br> one loop.</h1>
+        <p class="lede">
+          A webring for UTSA students and alumni working in tech: computing, cyber, data,
+          design and everything adjacent. Hop from one personal site to the next.
+        </p>
+        <div class="actions">
+          <a class="button button--primary" href="/random/">Take a random hop</a>
+          <a class="button button--outline" href="/join/">Add your site</a>
+        </div>
+      </div>
+      <figure class="hero-loop">
+{{loop}}
+        <figcaption>{{loopCaption}}</figcaption>
+      </figure>
+    </section>
+
+{{tileStrip}}
+
+    <section id="members" class="members container" aria-labelledby="members-title">
+      <div class="members-head">
+        <h2 id="members-title" class="section-title">The loop</h2>
+        <div class="filters" role="search" aria-label="Filter members" data-member-filters hidden>
+          <div class="field field--search">
+            <label for="filter-query">Search members</label>
+            <input id="filter-query" name="query" type="search" placeholder="Name, site, major or year" autocomplete="off" spellcheck="false">
+          </div>
+          <fieldset class="chips">
+            <legend class="sr-only">Show</legend>
+            <input id="group-all" class="chip-input" type="radio" name="group" value="all" checked>
+            <label class="chip" for="group-all">Everyone</label>
+            <input id="group-current" class="chip-input" type="radio" name="group" value="current">
+            <label class="chip" for="group-current">Current students</label>
+            <input id="group-alumni" class="chip-input" type="radio" name="group" value="alumni">
+            <label class="chip" for="group-alumni">Alumni</label>
+          </fieldset>
+          <div class="field">
+            <label for="filter-year">Class of</label>
+            <select id="filter-year" name="year">
+              <option value="">Any year</option>
+{{yearOptions}}
+            </select>
+          </div>
+        </div>
+      </div>
+      <p class="filter-status" role="status" data-filter-status></p>
+{{memberList}}
+      <p class="filter-empty" data-filter-empty hidden>No members match those filters.</p>
+    </section>
+
+    <section class="container" aria-labelledby="cta-title">
+      <div class="cta">
+        <div class="cta-copy">
+          <h2 id="cta-title" class="section-title">Join the loop</h2>
+          <p>
+            Current UTSA student or alum in a tech field with a personal site? Open a pull request
+            or fill out a short form, then add the prev/next links to your site. No script, no tracking.
+          </p>
+          <a class="button button--light" href="/join/">How to join</a>
+        </div>
+        <div class="cta-preview">
+          <p class="cta-preview-label">What visitors see on your site</p>
+          <p class="widget-preview">
+            <a href="/random/">← prev</a>
+            <a href="/">utsa-webring</a>
+            <a href="/random/">next →</a>
+          </p>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,94 @@
+    <article class="prose container">
+      <h1 class="display display--page">Join the loop</h1>
+      <p class="lede">
+        utsa-webring links the personal sites of UTSA students and alumni in tech.
+        Joining takes about five minutes and is free.
+      </p>
+
+      <section aria-labelledby="who">
+        <h2 id="who">Who can join</h2>
+        <ul>
+          <li>Current UTSA students and alumni (graduated, or attended for at least one semester), at any degree level.</li>
+          <li>
+            Your major, minor or degree is in a tech field: computer science, computer engineering, cybersecurity,
+            data science, AI/ML, information systems or technology, electrical engineering, statistics or math with
+            a computing focus, or digital/UX design. Not sure? If your site is mostly about technical work, you're in.
+          </li>
+          <li>
+            The link is your own personal site: a portfolio, blog or digital garden. Company pages, link-in-bio pages
+            and bare GitHub or LinkedIn profiles don't count.
+          </li>
+          <li>Your site follows the <a href="{{repoUrl}}/blob/main/CONTENT_POLICY.md">content policy</a>.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="how">
+        <h2 id="how">How to join</h2>
+        <h3>Option 1: open a pull request</h3>
+        <ol>
+          <li>Open <a href="{{repoUrl}}/edit/main/data/members.json"><code>data/members.json</code></a> on GitHub and click the pencil icon to edit it.</li>
+          <li>Add your entry at the <strong>end</strong> of the <code>members</code> list (don't forget the comma after the entry before yours).</li>
+          <li>Propose the change and fill in the pull request template, including one public link that shows you're at UTSA.</li>
+        </ol>
+        <pre class="code"><code>{
+  "id": "your-name",
+  "name": "Your Name",
+  "gradYear": 2027,
+  "major": "Computer Science",
+  "website": "https://your-site.dev/",
+  "joined": "{{today}}"
+}</code></pre>
+        <p>
+          <code>id</code> is lowercase letters, numbers and hyphens, and it never changes: it's part of your
+          prev/next links. <code>degree</code> (BS, BA, BBA, MS, MA, MBA, PhD or Other) is optional.
+        </p>
+        <h3>Option 2: fill out a form</h3>
+        <p>
+          No Git needed: <a href="{{repoUrl}}/issues/new?template=join.yml">open the join form</a>
+          and a maintainer will add you.
+        </p>
+        <p>
+          Either way, never post your student ID or abc123. A LinkedIn profile, a GitHub bio, a Devpost project
+          or a student-org roster page is enough to show you're at UTSA.
+        </p>
+      </section>
+
+      <section aria-labelledby="widget">
+        <h2 id="widget">Add the links to your site</h2>
+        <p>
+          Once you're in, paste these links anywhere on your site, usually the footer. They're plain HTML:
+          no script, no tracking, and they keep working as people join and leave. Style them however you like.
+        </p>
+        <div class="widget-form" data-widget>
+          <div class="field" data-widget-picker hidden>
+            <label for="widget-member">Your entry</label>
+            <select id="widget-member" name="member">
+              <option value="your-id">Choose your name</option>
+{{memberOptions}}
+            </select>
+          </div>
+          <div class="field">
+            <label for="widget-links">Text links</label>
+            <textarea id="widget-links" class="code" rows="5" readonly spellcheck="false" data-widget-snippet data-template="{{linksTemplate}}">{{linksSnippet}}</textarea>
+            <button type="button" class="button button--small" data-copy="widget-links" hidden>Copy</button>
+          </div>
+          <div class="field">
+            <label for="widget-badge">88×31 badge</label>
+            <textarea id="widget-badge" class="code" rows="3" readonly spellcheck="false">{{badgeSnippet}}</textarea>
+            <button type="button" class="button button--small" data-copy="widget-badge" hidden>Copy</button>
+          </div>
+          <p class="copy-status" role="status" data-copy-status></p>
+        </div>
+        <p class="badge-preview">
+          <img src="{{badgeUrl}}" width="88" height="31" alt="utsa-webring">
+        </p>
+      </section>
+
+      <section aria-labelledby="changes">
+        <h2 id="changes">Updating or leaving</h2>
+        <p>
+          Changed domains? Edit your own entry in <code>data/members.json</code> and open a pull request.
+          Want to leave? <a href="{{repoUrl}}/issues/new?template=remove.yml">Ask to be removed</a>; no questions asked.
+        </p>
+      </section>
+    </article>

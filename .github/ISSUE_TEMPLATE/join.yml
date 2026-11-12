@@ -1,0 +1,80 @@
+name: Join the ring
+description: Add your personal site to utsa-webring without using Git.
+title: "Join: "
+labels: ["join"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for joining! You can join if you're a **current UTSA student or alum in a tech field**
+        and the link is **your own personal site**. See [who can join](https://utsa-webring.com/join/#who).
+
+        Everything you enter here is public. **Never post your student ID, abc123 or transcripts.**
+  - type: input
+    id: name
+    attributes:
+      label: Name
+      description: Your name as you want it shown on the site.
+    validations:
+      required: true
+  - type: input
+    id: website
+    attributes:
+      label: Website
+      description: Your personal site. Must start with https://.
+      placeholder: https://your-site.dev/
+    validations:
+      required: true
+  - type: input
+    id: grad-year
+    attributes:
+      label: Graduation year
+      description: Expected or actual.
+      placeholder: "2027"
+    validations:
+      required: true
+  - type: input
+    id: major
+    attributes:
+      label: Major or field
+      placeholder: Computer Science
+    validations:
+      required: true
+  - type: dropdown
+    id: degree
+    attributes:
+      label: Degree (optional)
+      options:
+        - Prefer not to say
+        - BS
+        - BA
+        - BBA
+        - MS
+        - MA
+        - MBA
+        - PhD
+        - Other
+  - type: input
+    id: id
+    attributes:
+      label: Preferred id (optional)
+      description: Lowercase letters, numbers and hyphens. Used in your prev/next links and never changes.
+      placeholder: your-name
+  - type: input
+    id: verification
+    attributes:
+      label: Link that shows you're at UTSA
+      description: A LinkedIn profile, a GitHub bio, a Devpost project or a student-org roster page.
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirm
+      options:
+        - label: I'm a current UTSA student or alum in a tech field.
+          required: true
+        - label: This is my own personal site (not a company, link-in-bio or social profile page).
+          required: true
+        - label: My site follows the [content policy](https://github.com/daniel-ferrer/utsa-webring/blob/main/CONTENT_POLICY.md).
+          required: true

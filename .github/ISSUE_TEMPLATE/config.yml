@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Private report
+    url: mailto:report@utsa-webring.com
+    about: Report something sensitive without posting it publicly.
+  - name: Security vulnerability
+    url: https://github.com/daniel-ferrer/utsa-webring/security/advisories/new
+    about: Report a security problem with the site or this repository privately.
