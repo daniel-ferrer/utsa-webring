@@ -75,8 +75,16 @@ jobs:
       # read SVG fill colors and reports that text as "needs review". Its contrast
       # is checked by hand (lowest pair: white on rosa, 4.74:1). Keep it that way
       # when changing colors in src/assets/css/site.css.
+      #
+      # pa11y uses the Chrome preinstalled on the runner. Its own Chrome download
+      # only happens on a fresh npx install, which the npm cache skips.
       - name: Accessibility check (sample data)
+        env:
+          PUPPETEER_SKIP_DOWNLOAD: "true"
         run: |
+          PUPPETEER_EXECUTABLE_PATH="$(command -v google-chrome || command -v google-chrome-stable)"
+          export PUPPETEER_EXECUTABLE_PATH
+          echo "Using Chrome at ${PUPPETEER_EXECUTABLE_PATH}"
           npm run build:sample
           node scripts/serve.mjs --port 8080 &
           for _ in $(seq 1 20); do curl -fs http://127.0.0.1:8080/ > /dev/null && break; sleep 0.5; done
