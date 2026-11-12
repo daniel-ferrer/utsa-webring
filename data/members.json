@@ -1,4 +1,14 @@
 {
   "$schema": "./members.schema.json",
-  "members": []
+  "members": [
+    {
+      "id": "daniel-ferrer",
+      "name": "Daniel Ferrer-Sosa",
+      "gradYear": 2022,
+      "major": "Computer Science",
+      "degree": "BS",
+      "website": "https://danielferrer.dev/",
+      "joined": "2026-11-11"
+    }
+  ]
 }
