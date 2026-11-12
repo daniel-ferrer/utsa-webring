@@ -13,6 +13,7 @@
     "serve": "node scripts/serve.mjs",
     "dev": "npm run build:sample && npm run serve",
     "validate": "node scripts/validate.mjs",
+    "og-image": "node scripts/og-image.mjs",
     "lint:html": "html-validate \"dist/**/*.html\"",
     "test": "node --test \"test/**/*.test.mjs\"",
     "check": "npm test && npm run validate && npm run build && npm run lint:html"

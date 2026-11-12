@@ -17,6 +17,7 @@ export function renderPages({ members, templates, asset, today }) {
       title: escapeHtml(options.title),
       description: escapeHtml(SITE.description),
       indexing: indexingTags(options.path),
+      ogImage: escapeHtml(SITE.url + asset('img/og-image.png')),
       favicon: asset('img/favicon.svg'),
       stylesheet: asset('css/site.css'),
       scripts: (options.scripts ?? [])
