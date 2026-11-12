@@ -71,6 +71,10 @@ jobs:
       - name: Validate HTML
         run: npm run lint:html
 
+      # .pa11yci.json hides the loop diagram's SVG <text> from the check: axe can't
+      # read SVG fill colors and reports that text as "needs review". Its contrast
+      # is checked by hand (lowest pair: white on rosa, 4.74:1). Keep it that way
+      # when changing colors in src/assets/css/site.css.
       - name: Accessibility check (sample data)
         run: |
           npm run build:sample

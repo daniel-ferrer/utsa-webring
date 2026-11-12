@@ -3,6 +3,7 @@
     "standard": "WCAG2AA",
     "runners": ["axe", "htmlcs"],
     "timeout": 30000,
+    "hideElements": ".loop text",
     "chromeLaunchConfig": {
       "args": ["--no-sandbox"]
     }

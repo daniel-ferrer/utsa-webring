@@ -132,15 +132,17 @@ function renderNode(member, index, layout, isNewest) {
   const classes = ['loop-node', `swatch-${index % SWATCH_COUNT}`, isNewest ? 'is-newest' : ''].filter(Boolean).join(' ');
   const label = `${member.name} · ${displayHost(member.website)}`;
   const fontSize = r * 0.62;
+  // Nodes are not links: the SVG is a single image to assistive technology, and
+  // the member list below it has the real links.
   return [
-    `<a class="${classes}" href="${escapeHtml(member.website)}" tabindex="-1">`,
+    `<g class="${classes}">`,
     `<title>${escapeHtml(label)}</title>`,
     isNewest ? `<circle class="loop-halo" cx="${num(x)}" cy="${num(y)}" r="${num(r + Math.max(3, r * 0.2))}"/>` : '',
     `<circle class="loop-dot" cx="${num(x)}" cy="${num(y)}" r="${num(r)}"/>`,
     layout.showInitials
       ? `<text class="loop-initials" x="${num(x)}" y="${num(y + fontSize * 0.36)}" font-size="${num(fontSize)}" text-anchor="middle">${escapeHtml(initials(member.name))}</text>`
       : '',
-    '</a>',
+    '</g>',
   ]
     .filter(Boolean)
     .join('');

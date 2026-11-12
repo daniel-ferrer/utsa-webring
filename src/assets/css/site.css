@@ -456,8 +456,7 @@ textarea.code {
   fill: var(--swatch);
 }
 
-.loop-node:hover .loop-dot,
-.loop-node:focus .loop-dot {
+.loop-node:hover .loop-dot {
   stroke: var(--text);
   stroke-width: 2;
 }
