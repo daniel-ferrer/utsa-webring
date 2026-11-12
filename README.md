@@ -61,6 +61,10 @@ Preview the loop at a larger size with generated members:
 node scripts/build.mjs --fake 150 && npm run serve
 ```
 
+The social preview image (`src/assets/img/og-image.png`) is rendered by `scripts/og-image.mjs` with headless Chrome
+and committed. After changing its design, regenerate it with `npm run og-image` (add `-- --chrome <path>` or set
+`CHROME_PATH` if Chrome is not found).
+
 | Path | Contents |
 |---|---|
 | `data/` | `members.json` and its JSON Schema |
