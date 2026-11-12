@@ -9,6 +9,15 @@
       "degree": "BS",
       "website": "https://danielferrer.dev/",
       "joined": "2026-11-11"
+    },
+    {
+      "id": "victor-plata",
+      "name": "Victor Plata",
+      "gradYear": 2020,
+      "major": "Computer Science and Cybersecurity",
+      "degree": "BS",
+      "website": "https://victorplata.com/",
+      "joined": "2026-11-11"
     }
   ]
 }
