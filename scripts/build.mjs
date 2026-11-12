@@ -66,7 +66,8 @@ async function main() {
     `${JSON.stringify({ name: SITE.name, url: SITE.url, members }, null, 2)}\n`,
   );
 
-  console.log(`Built ${Object.keys(pages).length} pages for ${members.length} members into dist/`);
+  const memberCount = `${members.length} ${members.length === 1 ? 'member' : 'members'}`;
+  console.log(`Built ${Object.keys(pages).length} pages for ${memberCount} into dist/`);
 }
 
 async function readTemplates() {
