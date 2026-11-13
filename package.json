@@ -1,7 +1,7 @@
 {
   "name": "utsa-webring",
   "private": true,
-  "description": "A student-run webring for UTSA students and alumni in tech.",
+  "description": "A community-run webring for UTSA students and alumni in tech.",
   "license": "MIT",
   "type": "module",
   "engines": {

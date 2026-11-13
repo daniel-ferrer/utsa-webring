@@ -5,7 +5,7 @@ every member links to the next, and the last links back to the first.
 
 **[utsa-webring.com](https://utsa-webring.com)** · [Join](https://utsa-webring.com/join/) · [Content policy](CONTENT_POLICY.md)
 
-> Student-run and unofficial. Not affiliated with, sponsored, or endorsed by The University of Texas at San Antonio.
+> Community-run and unofficial. Not affiliated with, sponsored, or endorsed by The University of Texas at San Antonio.
 
 ## What's a webring?
 
