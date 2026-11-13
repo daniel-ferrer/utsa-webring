@@ -4,10 +4,10 @@ export const SITE = Object.freeze({
   url: 'https://utsa-webring.com',
   repoUrl: 'https://github.com/daniel-ferrer/utsa-webring',
   description:
-    'A student-run webring of personal sites by UTSA students and alumni in tech. ' +
+    'A community-run webring of personal sites by UTSA students and alumni in tech. ' +
     'Unofficial; not affiliated with The University of Texas at San Antonio.',
   disclaimer:
-    'Student-run and unofficial. Not affiliated with, sponsored, or endorsed by ' +
+    'Community-run and unofficial. Not affiliated with, sponsored, or endorsed by ' +
     'The University of Texas at San Antonio.',
 });
 

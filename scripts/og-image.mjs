@@ -105,7 +105,7 @@ ${renderPapelPicado()}
   <h1>utsa-webring</h1>
   <p class="tagline">A webring of personal sites by UTSA students &amp; alumni in tech.</p>
   <p class="url">utsa-webring.com</p>
-  <p class="note">Student-run and unofficial</p>
+  <p class="note">Community-run and unofficial</p>
 </div>
 ${renderRing()}
 ${renderTileStrip()}
